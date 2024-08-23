@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Diagram</title>
+</head>
+
+<body>
+    <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <!-- Resistors -->
+        <rect x="80" y="10" width="20" height="10" fill="gray" stroke="black" />
+        <rect x="80" y="60" width="20" height="10" fill="gray" stroke="black" />
+        <rect x="200" y="10" width="20" height="10" fill="gray" stroke="black" />
+        <rect x="200" y="60" width="20" height="10" fill="gray" stroke="black" />
+
+        <!-- Voltage Source -->
+        <rect x="140" y="40" width="20" height="30" fill="yellow" stroke="black" />
+
+        <!-- Lines -->
+        <line x1="60" y1="25" x2="80" y2="25" stroke="black" />
+        <line x1="100" y1="25" x2="200" y2="25" stroke="black" />
+        <line x1="220" y1="25" x2="240" y2="25" stroke="black" />
+        <line x1="220" y1="75" x2="240" y2="75" stroke="black" />
+
+        <!-- Nodes -->
+        <circle cx="80" cy="25" r="2" fill="black" />
+        <circle cx="200" cy="25" r="2" fill="black" />
+        <circle cx="200" cy="75" r="2" fill="black" />
+        <circle cx="140" cy="40" r="2" fill="black" />
+    </svg>
+</body>
+
+</html>
