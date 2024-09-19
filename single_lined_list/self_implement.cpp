@@ -41,6 +41,37 @@ public:
         }
         cur->next = new_node;
     }
+
+    void prepend(int data) {
+        Node *new_node = new Node(data);
+        new_node->next = head;
+        head = new_node;
+    }
+
+    void insert_after_node(Node *prev_node, int data){
+        Node *new_node = new Node(data);
+        new_node->next = prev_node->next;
+        prev_node->next = new_node;
+    }
+
+    void delete_node(int key) {
+        Node *cur = head;
+        if (cur && cur->data == key) {
+            head = head->next;
+            return;
+        }
+        Node *prev = head;
+        cur = head->next;
+        while (cur && cur->data != key) {
+            prev = cur;
+            cur = cur->next;
+        }
+        if (cur == nullptr) {
+            return; // key is not present in the LinkedList
+        }
+        prev->next = cur->next;
+        return;
+    }
 };
 
 
@@ -51,7 +82,11 @@ int main() {
     mylist.append(2);
     mylist.print_list();
     mylist.append(3);
+    mylist.prepend(0);
     mylist.print_list();
-
+    mylist.insert_after_node(mylist.head, 9);
+    mylist.print_list();
+    mylist.delete_node(9);
+    mylist.print_list();
     return 0;
 }
